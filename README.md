@@ -15,7 +15,7 @@ Goals are subject to change.
 
 * Add basic functionality [X]
 * Make the code look good [five years]
-* Add nicknames [ ]
+* Add nicknames [X]
 * Add formatting [ ]
   * Colours in nicknames [ ]
   * Timestamps with messages [ ]
