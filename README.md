@@ -11,11 +11,11 @@ The server receives a message from the client, and then broadcasts that message 
 Run the binary provided in the release in terminal, (Windows: `contempo-note-passing.exe`, Unix: `./contempo-note-passing`) and enter server host, port and type in the provided prompts.
 
 ## Goals
-Goals are subject to change.
+Goals are subject to change and listed in order of urgency.
 
 * Add basic functionality [X]
-* Make the code look good [five years]
 * Add nicknames [X]
+* Add functional TUI using Termui [ ]
 * Add formatting [ ]
   * Colours in nicknames [ ]
   * Timestamps with messages [ ]
@@ -23,3 +23,4 @@ Goals are subject to change.
 * Signed messages [ ]
 * Rooms; server handles "mini-servers" separately [ ]
 * Customisable config files to automatically adjust nicknames, formatting and connections
+* Make the code look good [five years]
