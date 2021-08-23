@@ -25,6 +25,7 @@ var (
 	CONN_HOST string //hostname
 	CONN_PORT string //port
 	CONN_TYPE string //connection type; idk why i did this choose tcp always
+	nickname  string //nickname to be sent with message
 )
 
 func init() { // i didn't want to use fmt.Scanln, but i had to because when i did io.Reader, it would add a redundant new line. why did it do that?
@@ -36,6 +37,9 @@ func init() { // i didn't want to use fmt.Scanln, but i had to because when i di
 
 	fmt.Print("Enter connection type:\n>>>")
 	fmt.Scanln(&CONN_TYPE)
+
+	fmt.Print("Enter nickname:\n>>>")
+	fmt.Scanln(&nickname)
 }
 
 func main() { //calls useful functions
@@ -54,17 +58,16 @@ func readMessage(conn net.Conn) { //reads text from server
 	for {
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 
-		fmt.Print("Server relay: " + string(message))
+		fmt.Print(string(message))
 	}
 }
 
 func writeMessage(conn net.Conn) { //writes text and sends to server
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Print("Text to send: ")
 
 		input, _ := reader.ReadString('\n')
 
-		conn.Write([]byte(input))
+		conn.Write([]byte(nickname + ": " + input))
 	}
 }
